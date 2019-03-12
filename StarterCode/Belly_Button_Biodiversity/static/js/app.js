@@ -41,7 +41,7 @@ function buildCharts(sample) {
   // @TODO: Use `d3.json` to fetch the sample data for the plots
   var url = `/samples/${sample}`;
   
-  d3.select(url).then(function(response){
+  d3.json(url).then(function(response){
     var x_value = response["otu_ids"];
     var y_value = response["sample_values"];
     var size_value = response["sample_values"];
